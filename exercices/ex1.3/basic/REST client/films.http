@@ -1,0 +1,13 @@
+### Create a film
+
+POST http://localhost:3000/films
+Content-Type: application/json
+
+{
+    "title":"Super Mario Bros",
+    "link":"https://www.imdb.com/title/tt6718170/"
+}
+
+### Read all films
+
+GET http://localhost:3000/films
