@@ -2,7 +2,13 @@ var express = require('express');
 const { serialize, parse } = require('../utils/json');
 var router = express.Router();
 
-const jsonDbPath = __dirname + '/../data/pizzas.json';
+const path = require('node:path');
+
+
+const jsonDbPath = path.join(__dirname, '/../data/films.json');
+
+//const jsonDbPath =  __dirname + '/../data/films.json';
+
 
 const FILMS = [
     {
@@ -104,17 +110,17 @@ router.post('/', (req, res) => {
     const lastId = lastItemIndex !== undefined ? films[lastItemIndex]?.id : 0;
     const nextId = lastId + 1;
   
-    const newPizza = {
+    const newFilm = {
       id: nextId,
       title: title,
       link: link,
     };
   
-    films.push(newPizza);
+    films.push(newFilm);
 
     serialize(jsonDbPath, films);
   
-    res.json(newPizza);
+    res.json(newFilm);
   });
 
 router.get('/filter/:character', (req, res) => {

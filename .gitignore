@@ -8,3 +8,5 @@ package-lock.json
 .env
 # ignore dossier photo
 photos
+#ignore data
+data
