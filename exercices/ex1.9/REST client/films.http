@@ -1,0 +1,40 @@
+
+@baseUrl = http://localhost:3000
+
+### Create a film
+
+POST http://localhost:3000/films
+Content-Type: application/json
+
+
+{
+    "title":"Super Mario Bros ",
+    "link":"https://www.imdb.com/title/tt6718170/"
+}
+
+### Read all films
+
+GET http://localhost:3000/films
+
+
+
+### filtrer les films
+
+GET http://localhost:3000/films/?filterTitle=film
+
+### trier les films
+
+GET http://localhost:3000/films/?order=minimum-duration
+
+### Delete film identified by 2
+DELETE {{baseUrl}}/films/6
+
+### Update the film identified by 6
+PATCH {{baseUrl}}/films/5
+Content-Type: application/json
+
+{
+    "title":"Magic Green 2",
+    "link": "new link"
+}
+
