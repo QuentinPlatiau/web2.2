@@ -27,7 +27,7 @@ divs.forEach((div) => {
         }
 
         else if(val !== ""){
-            if(id !== div.id){
+            if(div.innerText === ""){
                 // eslint-disable-next-line no-param-reassign
                 div.innerHTML = val;
                 grille[Math.floor((div.id-1)/8)][(div.id-1)%8] = val;
